@@ -1,5 +1,6 @@
 ---
 // Header component for the landing page
+import ParticleBackground from '../ui/ParticleBackground.astro';
 
 // Props for customization
 interface Props {
@@ -13,6 +14,8 @@ interface Props {
   hoverColor?: string;
   // Whether to show the fonts link (optional)
   showFontsLink?: boolean;
+  // Whether to enable particle animation background (optional)
+  enableParticles?: boolean;
 }
 
 // Default values for props
@@ -22,13 +25,15 @@ const {
   textColor = "text-gray-700",
   hoverColor = "text-primary-500",
   showFontsLink = true,
+  enableParticles = true,
 } = Astro.props;
 ---
 
 <header
-  class={`sticky top-0 z-50 w-full ${bgColor} backdrop-blur-sm shadow-sm`}
+  class={`sticky top-0 z-50 w-full ${bgColor} backdrop-blur-sm shadow-sm relative`}
 >
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+  {enableParticles && <ParticleBackground canvasId="header-particles" particleDensity={60} speed={2} />}
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center relative z-10">
     <!-- Logo -->
     <div class="flex items-center">
       <a href="#top" class="flex items-center">
@@ -188,7 +193,7 @@ const {
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class={`hidden md:hidden ${bgColor.replace("/90", "")} w-full border-t`}
+    class={`hidden md:hidden ${bgColor.replace("/90", "")} w-full border-t relative z-10`}
   >
     <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
       <a

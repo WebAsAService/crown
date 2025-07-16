@@ -1,0 +1,201 @@
+---
+// ParticleBackground component for dynamic header animations
+// Uses particles.js library with theme colors and responsive design
+
+interface Props {
+  // Canvas ID for particles
+  canvasId?: string;
+  // Particle density (lower = more particles)
+  particleDensity?: number;
+  // Animation speed
+  speed?: number;
+  // Use theme colors
+  useThemeColors?: boolean;
+}
+
+const {
+  canvasId = "particles-canvas",
+  particleDensity = 80,
+  speed = 3,
+  useThemeColors = true,
+} = Astro.props;
+---
+
+<div id="particles-container" class="absolute inset-0 overflow-hidden pointer-events-none">
+  <canvas id={canvasId} class="w-full h-full"></canvas>
+</div>
+
+<script define:vars={{ canvasId, particleDensity, speed, useThemeColors }}>
+  // Import particles.js from CDN for better compatibility with Astro
+  if (typeof window !== 'undefined') {
+    // Load particles.js
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+    script.onload = function() {
+      initParticles();
+    };
+    document.head.appendChild(script);
+  }
+
+  function initParticles() {
+    if (typeof particlesJS === 'undefined') return;
+
+    // Get theme colors from CSS variables
+    const getThemeColor = (colorVar) => {
+      const root = document.documentElement;
+      return getComputedStyle(root).getPropertyValue(colorVar).trim();
+    };
+
+    // Configure particles based on theme colors
+    const primaryColor = useThemeColors ? getThemeColor('--color-primary-500') : '#0ea5e9';
+    const secondaryColor = useThemeColors ? getThemeColor('--color-secondary-500') : '#8b5cf6';
+    const accentColor = useThemeColors ? getThemeColor('--color-accent-500') : '#f43f5e';
+
+    // Convert hex to rgba for opacity effects
+    const hexToRgb = (hex) => {
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      } : null;
+    };
+
+    const primaryRgb = hexToRgb(primaryColor);
+    const secondaryRgb = hexToRgb(secondaryColor);
+
+    // Responsive particle count based on screen size
+    const getParticleCount = () => {
+      const width = window.innerWidth;
+      if (width < 640) return Math.floor(particleDensity * 0.5); // Mobile
+      if (width < 1024) return Math.floor(particleDensity * 0.75); // Tablet
+      return particleDensity; // Desktop
+    };
+
+    // Particles.js configuration
+    const particlesConfig = {
+      particles: {
+        number: {
+          value: getParticleCount(),
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: [primaryColor, secondaryColor, accentColor]
+        },
+        shape: {
+          type: "circle",
+          stroke: {
+            width: 0,
+            color: "#000000"
+          }
+        },
+        opacity: {
+          value: 0.4,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false
+          }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: true,
+            speed: speed,
+            size_min: 0.5,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: primaryColor,
+          opacity: 0.2,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: speed,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "grab"
+          },
+          onclick: {
+            enable: true,
+            mode: "push"
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            line_linked: {
+              opacity: 0.5
+            }
+          },
+          push: {
+            particles_nb: 4
+          }
+        }
+      },
+      retina_detect: true
+    };
+
+    // Initialize particles
+    particlesJS(canvasId, particlesConfig);
+
+    // Handle responsive resize
+    window.addEventListener('resize', () => {
+      // Destroy and recreate particles with new count
+      if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
+        window.pJSDom[0].pJS.fn.vendors.destroypJS();
+        window.pJSDom = [];
+        
+        // Update particle count and reinitialize
+        particlesConfig.particles.number.value = getParticleCount();
+        particlesJS(canvasId, particlesConfig);
+      }
+    });
+  }
+</script>
+
+<style>
+  #particles-container {
+    z-index: 0;
+  }
+  
+  #particles-container canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* Ensure particles don't interfere with header content */
+  @media (max-width: 640px) {
+    #particles-container {
+      opacity: 0.7; /* Reduce opacity on mobile for better readability */
+    }
+  }
+</style>

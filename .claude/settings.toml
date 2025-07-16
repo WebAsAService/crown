@@ -1,0 +1,34 @@
+[tools]
+# Enable all tools by default
+bash = true
+edit = true
+read = true
+write = true
+ls = true
+grep = true
+glob = true
+
+[github]
+# GitHub-specific settings
+default_branch = "main"
+conventional_commits = true
+auto_link_issues = true
+
+
+[project.node]
+# Node.js project settings
+package_manager = "npm"
+lint_command = "npm run lint"
+test_command = "npm test"
+build_command = "npm run build"
+dev_command = "npm run dev"
+
+
+[project.node]
+# Node.js project settings
+package_manager = "npm"
+lint_command = "npm run lint"
+test_command = "npm test"
+build_command = "npm run build"
+dev_command = "npm run dev"
+
