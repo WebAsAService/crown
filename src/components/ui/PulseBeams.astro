@@ -5,6 +5,7 @@ interface Props {
   buttonLink?: string;
   buttonClass?: string;
   showButton?: boolean;
+  particles?: boolean;
 }
 
 const {
@@ -12,6 +13,7 @@ const {
   buttonLink = "#",
   buttonClass = "bg-secondary-500 hover:bg-secondary-600",
   showButton = true,
+  particles = false,
 } = Astro.props;
 ---
 
@@ -168,6 +170,7 @@ const {
   }
 </style>
 
+{!particles && (
 <div
   class="hidden md:flex h-full relative items-center justify-center antialiased"
 >
@@ -395,3 +398,4 @@ const {
     </svg>
   </div>
 </div>
+)}
