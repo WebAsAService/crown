@@ -40,7 +40,10 @@ const partners = [
       <!-- Two-column layout: Text on left, Logo grid on right -->
       <div class="flex flex-col lg:flex-row gap-12">
         <!-- Left column: Headline and copy -->
-        <div class="lg:w-1/2">
+        <div 
+          class="lg:w-1/2 opacity-0 -translate-x-8 transition-all duration-700 ease-out"
+          data-animate="text-column"
+        >
           <h2 class="text-3xl md:text-4xl font-heading mb-6 text-secondary-500">
             Strategic Partners You Can Leverage
           </h2>
@@ -59,15 +62,22 @@ const partners = [
         </div>
 
         <!-- Right column: Logo grid -->
-        <div class="lg:w-1/2">
+        <div 
+          class="lg:w-1/2 opacity-0 translate-x-8 transition-all duration-700 ease-out"
+          data-animate="content-column"
+        >
           <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
             {
-              partners.map((partner) => (
-                <div class="bg-white rounded-lg p-4 flex items-center justify-center h-24 hover:shadow-md transition-all">
+              partners.map((partner, index) => (
+                <div 
+                  class="bg-white rounded-lg p-4 flex items-center justify-center h-24 hover:shadow-md transition-all opacity-0 scale-95 translate-y-4 duration-500 ease-out shadow-sm border border-gray-100"
+                  data-animate="grid-item"
+                  data-index={index}
+                >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    class="max-h-16 max-w-full object-contain"
+                    class="max-h-16 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     title={partner.name}
                   />
                 </div>
@@ -120,3 +130,58 @@ const partners = [
   class="h-60 bg-gradient-to-b from-secondary-50 via-primary-800 to-primary-900"
 >
 </div>
+
+<script>
+  import { initScrollAnimations } from '../../utils/scrollAnimations.js';
+  
+  // Initialize animations when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      initScrollAnimations();
+    });
+  } else {
+    initScrollAnimations();
+  }
+</script>
+
+<style>
+  /* Import shared animation styles */
+  [data-animate] {
+    will-change: transform, opacity;
+  }
+  
+  [data-animate]:not(.opacity-0) {
+    will-change: auto;
+  }
+
+  /* Smooth transitions */
+  [data-animate] {
+    transform: translateZ(0); /* Force hardware acceleration */
+  }
+
+  /* Accessibility: Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
+    }
+    
+    [data-animate]:hover {
+      transform: scale(1);
+      filter: brightness(1.05);
+    }
+  }
+
+  /* Partner logo specific styles */
+  .partner-logo-grid [data-animate="grid-item"] {
+    transition-delay: calc(var(--index) * 100ms + 500ms);
+  }
+
+  /* Enhanced hover effects for partner logos */
+  [data-animate="grid-item"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+</style>
