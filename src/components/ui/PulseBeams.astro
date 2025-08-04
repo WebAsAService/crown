@@ -169,15 +169,15 @@ const {
 </style>
 
 <div
-  class="hidden md:flex h-full relative items-center justify-center antialiased"
+  class="h-full relative items-center justify-center antialiased"
 >
   <!-- Network Background Layer -->
-  <div class="absolute inset-0 bg-primary-900 opacity-70"></div>
+  <div class="absolute inset-0 bg-primary-900 opacity-70 hidden md:block"></div>
   
   <!-- Optional Button in Center -->
   {
     showButton && (
-      <div class="relative z-10">
+      <div class="relative z-10 flex items-center justify-center h-full">
         <a
           href={buttonLink}
           class={`pulse-button ${buttonClass} no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-flex items-center justify-center`}
@@ -192,7 +192,7 @@ const {
 
   <!-- Pulse Beams SVG -->
   <div
-    class="absolute inset-0 flex items-center justify-center pointer-events-none"
+    class="absolute inset-0 flex items-center justify-center pointer-events-none hidden md:flex"
   >
     <svg
       width="878"
