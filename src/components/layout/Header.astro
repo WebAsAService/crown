@@ -31,10 +31,10 @@ const {
   <div class="container mx-auto px-4 py-4 flex justify-between items-center">
     <!-- Logo -->
     <div class="flex items-center">
-      <a href="#top" class="flex items-center">
+      <a href="/" class="flex items-center">
         {
           logo ? (
-            <img src={logo} alt="Logo" class="h-10" />
+            <img src={logo} alt="Logo" class="h-8" />
           ) : (
             <span class="text-2xl font-bold">Brand</span>
           )
@@ -45,18 +45,18 @@ const {
     <!-- Navigation -->
     <nav class="hidden md:flex space-x-8">
       <a
-        href="#top"
+        href="/"
         class={`${textColor} hover:${hoverColor} transition-colors`}>Home</a
       >
       <a
-        href="#what-we-fix"
+        href="/#what-we-fix"
         class={`${textColor} hover:${hoverColor} transition-colors`}>Problems</a
       >
 
       <!-- What We Offer dropdown -->
       <div class="relative group">
         <a
-          href="#services"
+          href="/#services"
           class={`${textColor} hover:${hoverColor} transition-colors flex items-center`}
         >
           Solutions
@@ -78,22 +78,22 @@ const {
           class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
         >
           <a
-            href="#services"
+            href="/#services"
             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >Services</a
           >
           <a
-            href="#competitors"
+            href="/#competitors"
             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >Comparison</a
           >
           <a
-            href="#pricing"
+            href="/#pricing"
             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >Pricing</a
           >
           <a
-            href="#tools"
+            href="/#tools"
             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >Tools</a
           >
@@ -103,7 +103,7 @@ const {
       <!-- Who We Are dropdown -->
       <div class="relative group">
         <a
-          href="#team"
+          href="/#value-comparison"
           class={`${textColor} hover:${hoverColor} transition-colors flex items-center`}
         >
           About
@@ -125,17 +125,17 @@ const {
           class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
         >
           <a
-            href="#team"
+            href="/#value-comparison"
             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-            >Team</a
+            >Why Us</a
           >
           <a
-            href="#partners"
+            href="/#partners"
             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >Partners</a
           >
           <a
-            href="#faq"
+            href="/#faq"
             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >FAQ</a
           >
@@ -143,7 +143,7 @@ const {
       </div>
 
       <a
-        href="#contact"
+        href="/#contact"
         class={`${textColor} hover:${hoverColor} transition-colors`}>Contact</a
       >
       {
@@ -160,7 +160,7 @@ const {
 
     <!-- CTA Button -->
     <div class="hidden md:block">
-      <a href="#contact" class="btn btn-primary bg-secondary-500">Get Started</a
+      <a href="/#pricing" class="btn btn-primary bg-secondary-500">Get Started</a
       >
     </div>
 
@@ -192,12 +192,12 @@ const {
   >
     <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
       <a
-        href="#top"
+        href="/"
         class={`${textColor} hover:${hoverColor} py-2 transition-colors`}
         >Home</a
       >
       <a
-        href="#what-we-fix"
+        href="/#what-we-fix"
         class={`${textColor} hover:${hoverColor} py-2 transition-colors`}
         >Problems</a
       >
@@ -207,22 +207,22 @@ const {
         <div class={`${textColor} font-medium`}>Solutions</div>
         <div class="pl-4 mt-1 flex flex-col space-y-2">
           <a
-            href="#services"
+            href="/#services"
             class={`${textColor} hover:${hoverColor} py-1 transition-colors text-sm`}
             >Services</a
           >
           <a
-            href="#competitors"
+            href="/#competitors"
             class={`${textColor} hover:${hoverColor} py-1 transition-colors text-sm`}
             >Comparison</a
           >
           <a
-            href="#pricing"
+            href="/#pricing"
             class={`${textColor} hover:${hoverColor} py-1 transition-colors text-sm`}
             >Pricing</a
           >
           <a
-            href="#tools"
+            href="/#tools"
             class={`${textColor} hover:${hoverColor} py-1 transition-colors text-sm`}
             >Tools</a
           >
@@ -234,17 +234,17 @@ const {
         <div class={`${textColor} font-medium`}>About</div>
         <div class="pl-4 mt-1 flex flex-col space-y-2">
           <a
-            href="#team"
+            href="/#value-comparison"
             class={`${textColor} hover:${hoverColor} py-1 transition-colors text-sm`}
-            >Team</a
+            >Why Us</a
           >
           <a
-            href="#partners"
+            href="/#partners"
             class={`${textColor} hover:${hoverColor} py-1 transition-colors text-sm`}
             >Partners</a
           >
           <a
-            href="#faq"
+            href="/#faq"
             class={`${textColor} hover:${hoverColor} py-1 transition-colors text-sm`}
             >FAQ</a
           >
@@ -252,7 +252,7 @@ const {
       </div>
 
       <a
-        href="#contact"
+        href="/#contact"
         class={`${textColor} hover:${hoverColor} py-2 transition-colors`}
         >Contact</a
       >
@@ -266,7 +266,7 @@ const {
           </a>
         )
       }
-      <a href="#contact" class="btn btn-secondary w-full text-center"
+      <a href="/#pricing" class="btn btn-secondary w-full text-center"
         >Get Started</a
       >
     </div>
@@ -287,10 +287,22 @@ const {
     }
 
     // Smooth scrolling for all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach((anchor) => {
       anchor.addEventListener(
         "click",
         function (this: HTMLAnchorElement, e: Event) {
+          const href = this.getAttribute("href") || "";
+          
+          // Only handle smooth scrolling if we're on the same page
+          const isCurrentPage = window.location.pathname === "/" || 
+                               (href.startsWith("#") && window.location.pathname === "/");
+          const isSamePage = href.startsWith("/#") && window.location.pathname === "/";
+          
+          if (!isCurrentPage && !isSamePage) {
+            // Let the browser handle navigation to different pages
+            return;
+          }
+
           e.preventDefault();
 
           // Close mobile menu if open
@@ -298,9 +310,11 @@ const {
             mobileMenu.classList.add("hidden");
           }
 
-          // Handle special case for #top
-          const href = this.getAttribute("href");
-          if (href === "#top") {
+          // Extract the hash part
+          const hash = href.startsWith("/#") ? href.substring(1) : href;
+
+          // Handle special case for #top or /
+          if (hash === "#top" || href === "/") {
             window.scrollTo({
               top: 0,
               behavior: "smooth",
@@ -309,8 +323,7 @@ const {
           }
 
           // For all other anchor links
-          const targetId = href || "";
-          const targetElement = document.querySelector(targetId);
+          const targetElement = document.querySelector(hash);
 
           if (targetElement) {
             targetElement.scrollIntoView({
@@ -319,7 +332,7 @@ const {
             });
 
             // Update URL without page reload
-            history.pushState({}, "", targetId);
+            history.pushState({}, "", hash);
           }
         },
       );

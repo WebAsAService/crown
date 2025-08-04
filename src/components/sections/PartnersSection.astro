@@ -9,16 +9,15 @@ const partners = [
     name: "WeHo Chamber",
     logo: "/images/logos/partners/Gold_Chamber_Logo_2024.png",
   },
-  // {
-  //   name: "Coffin Capital",
-  //   logo: "/images/logos/partners/sequoia-logo@2x.png",
-  // }, // Using sequoia as placeholder for Coffin Capital
+  {
+    name: "Bill.com",
+    logo: "/images/logos/partners/bill.png",
+  },
   {
     name: "Bienville Business Credit",
     logo: "/images/logos/partners/BienvilleBC-Logo.png",
   },
   { name: "Stifel Bank", logo: "/images/logos/partners/stifel.png" },
-  { name: "FFB Bank", logo: "/images/logos/partners/ffb_bank.png" },
   {
     name: "SG Credit Partners",
     logo: "/images/logos/partners/sg_credit_partners_logo.jpg",
@@ -28,10 +27,10 @@ const partners = [
     logo: "/images/logos/partners/Green Hasson Janks.png",
   },
   {
-    name: "Sequoia Consulting",
-    logo: "/images/logos/partners/sequoia-logo@2x.png",
+    name: "Smart Data",
+    logo: "/images/logos/partners/smart-data.png",
   },
-  { name: "EOS", logo: "/images/logos/partners/EOS_logo_horizontal.png" },
+  { name: "EOS", logo: "/images/logos/partners/eos-big.png" },
 ];
 ---
 
@@ -41,34 +40,44 @@ const partners = [
       <!-- Two-column layout: Text on left, Logo grid on right -->
       <div class="flex flex-col lg:flex-row gap-12">
         <!-- Left column: Headline and copy -->
-        <div class="lg:w-1/2">
+        <div 
+          class="lg:w-1/2 opacity-0 -translate-x-8 transition-all duration-700 ease-out"
+          data-animate="text-column"
+        >
           <h2 class="text-3xl md:text-4xl font-heading mb-6 text-secondary-500">
-            Trusted by Organizations That Move Startups Forward
+            Strategic Partners You Can Leverage
           </h2>
           <div class="space-y-4 text-lg text-primary-900">
             <p>
-              We collaborate with banks, investors, and founder-facing
-              organizations to bring finance, compliance, and capital access
-              under one roof.
+              Startup finance goes beyond numbers. Success often depends on the
+              relationships you build and the support you have around you.
             </p>
             <p>
-              Whether it's streamlining back-office systems or prepping for a
-              raise, our partners trust us to help their networks scale with
-              structure, not stress.
+              When you work with Crown, you get both, our team and direct access
+              to trusted partners across banking, credit, investor relations,
+              legal, and go-to-market strategy.
             </p>
+            <p>We've already built the network, now it works for you.</p>
           </div>
         </div>
 
         <!-- Right column: Logo grid -->
-        <div class="lg:w-1/2">
+        <div 
+          class="lg:w-1/2 opacity-0 translate-x-8 transition-all duration-700 ease-out"
+          data-animate="content-column"
+        >
           <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
             {
-              partners.map((partner) => (
-                <div class="bg-white rounded-lg p-4 flex items-center justify-center h-24 hover:shadow-md transition-all">
+              partners.map((partner, index) => (
+                <div 
+                  class="bg-white rounded-lg p-4 flex items-center justify-center h-24 hover:shadow-md transition-all opacity-0 scale-95 translate-y-4 duration-500 ease-out shadow-sm border border-gray-100"
+                  data-animate="grid-item"
+                  data-index={index}
+                >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    class="max-h-16 max-w-full object-contain"
+                    class="max-h-16 max-w-full object-contain hover:scale-105 transition-transform duration-300"
                     title={partner.name}
                   />
                 </div>
@@ -115,10 +124,64 @@ const partners = [
       </div> -->
     </div>
   </div>
-  
 </section>
 <!-- Gradient transition at the end -->
 <div
-class="h-60 bg-gradient-to-b from-secondary-50 via-primary-800 to-primary-900"
+  class="h-60 bg-gradient-to-b from-secondary-50 via-primary-800 to-primary-900"
 >
 </div>
+
+<script>
+  import { initScrollAnimations } from '../../utils/scrollAnimations.js';
+  
+  // Initialize animations when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      initScrollAnimations();
+    });
+  } else {
+    initScrollAnimations();
+  }
+</script>
+
+<style>
+  /* Import shared animation styles */
+  [data-animate] {
+    will-change: transform, opacity;
+  }
+  
+  [data-animate]:not(.opacity-0) {
+    will-change: auto;
+  }
+
+  /* Smooth transitions */
+  [data-animate] {
+    transform: translateZ(0); /* Force hardware acceleration */
+  }
+
+  /* Accessibility: Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
+    }
+    
+    [data-animate]:hover {
+      transform: scale(1);
+      filter: brightness(1.05);
+    }
+  }
+
+  /* Partner logo specific styles */
+  .partner-logo-grid [data-animate="grid-item"] {
+    transition-delay: calc(var(--index) * 100ms + 500ms);
+  }
+
+  /* Enhanced hover effects for partner logos */
+  [data-animate="grid-item"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+</style>
