@@ -3,39 +3,36 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import path from 'path';
 
-// Security headers middleware
-const securityHeaders = (req, res, next) => {
-  // Content Security Policy
-  res.setHeader('Content-Security-Policy', 
-    "default-src 'self'; " +
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval'; " +
-    "style-src 'self' 'unsafe-inline'; " +
-    "img-src 'self' data: https:; " +
-    "font-src 'self' https:; " +
-    "connect-src 'self'; " +
-    "frame-ancestors 'none';"
-  );
-  
-  // Prevent clickjacking
-  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
-  
-  // Prevent MIME type sniffing
-  res.setHeader('X-Content-Type-Options', 'nosniff');
-  
-  // Control referrer information
-  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-  
-  // Permissions Policy (formerly Feature Policy)
-  res.setHeader('Permissions-Policy', 
-    'camera=(), ' +
-    'microphone=(), ' +
-    'geolocation=(), ' +
-    'gyroscope=(), ' +
-    'magnetometer=(), ' +
-    'payment=(), ' +
+// Security headers configuration
+const securityHeaders = {
+  'Content-Security-Policy': [
+    "default-src 'self'",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+    "style-src 'self' 'unsafe-inline'", 
+    "img-src 'self' data: https:",
+    "font-src 'self' https:",
+    "connect-src 'self'",
+    "frame-ancestors 'none'"
+  ].join('; '),
+  'X-Frame-Options': 'SAMEORIGIN',
+  'X-Content-Type-Options': 'nosniff',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': [
+    'camera=()',
+    'microphone=()',
+    'geolocation=()',
+    'gyroscope=()',
+    'magnetometer=()',
+    'payment=()',
     'usb=()'
-  );
-  
+  ].join(', ')
+};
+
+// Development middleware for security headers
+const securityMiddleware = (req, res, next) => {
+  Object.entries(securityHeaders).forEach(([header, value]) => {
+    res.setHeader(header, value);
+  });
   next();
 };
 
@@ -45,6 +42,8 @@ export default defineConfig({
   integrations: [tailwind()],
   // Configure site metadata
   site: 'https://your-site-domain.com',
+  // Enable SSR for middleware support
+  output: 'hybrid',
   // Configure build output
   build: {
     // You can customize the build output here
@@ -52,8 +51,9 @@ export default defineConfig({
   // Configure server options for development
   server: {
     port: 3000,
+    headers: securityHeaders
   },
-  // Configure path aliases and security headers
+  // Configure path aliases and dev server
   vite: {
     resolve: {
       alias: {
@@ -67,7 +67,7 @@ export default defineConfig({
     server: {
       middlewareMode: false,
       configure: (server) => {
-        server.middlewares.use(securityHeaders);
+        server.middlewares.use(securityMiddleware);
       }
     }
   }
