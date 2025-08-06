@@ -42,8 +42,8 @@ export default defineConfig({
   integrations: [tailwind()],
   // Configure site metadata
   site: 'https://your-site-domain.com',
-  // Enable SSR for middleware support
-  output: 'hybrid',
+  // Static site generation (default)
+  output: 'static',
   // Configure build output
   build: {
     // You can customize the build output here

@@ -32,18 +32,14 @@ Headers are automatically applied via:
 - Astro config `server.headers`
 - Vite middleware for fallback
 
-### Production Builds
-Headers work through multiple mechanisms:
+### Production Builds (Static Sites)
+Since this is a static Astro site, headers are configured through:
 
-#### 1. Astro Middleware (`src/middleware.ts`)
-- Works with SSR/hybrid output modes
-- Applies headers to all responses server-side
-
-#### 2. Static File Headers
+#### 1. Static File Headers
 - **Netlify**: `public/_headers` file
 - **Vercel**: `vercel.json` configuration
 
-#### 3. Web Server Configuration (if self-hosting)
+#### 2. Web Server Configuration (if self-hosting)
 Add to your web server config:
 
 **Nginx:**
