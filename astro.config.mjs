@@ -7,11 +7,11 @@ import path from 'path';
 const securityHeaders = {
   'Content-Security-Policy': [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com",
     "style-src 'self' 'unsafe-inline'", 
     "img-src 'self' data: https:",
     "font-src 'self' https:",
-    "connect-src 'self'",
+    "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
     "frame-ancestors 'none'"
   ].join('; '),
   'X-Frame-Options': 'SAMEORIGIN',
