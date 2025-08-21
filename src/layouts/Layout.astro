@@ -26,6 +26,15 @@ import "../styles/global.css";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-NS50763HRF"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-NS50763HRF');
+		</script>
 		<style>
 			/* Ensure the theme class is applied to the entire document */
 			body {
@@ -37,7 +46,7 @@ import "../styles/global.css";
 			.theme-green-nature body::before,
 			.theme-purple-elegance body::before,
 			.theme-corporate-red body::before {
-				content: attr(class);
+				content: "Theme Active";
 				position: fixed;
 				top: 5px;
 				right: 5px;
