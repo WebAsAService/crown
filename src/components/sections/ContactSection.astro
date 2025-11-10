@@ -1,5 +1,6 @@
 ---
 // Contact section component for the landing page
+import { CALENDLY_URL } from "../../config/links";
 ---
 
 <section id="contact" class="py-20 bg-primary-900">
@@ -12,7 +13,7 @@
         Book a call or send us a message.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="https://calendly.com/mhachicha-crownacquisitiongroup" class="inline-block bg-secondary-500 hover:bg-secondary-600 text-primary-900 font-semibold py-3 px-6 rounded-lg transition-colors">Schedule a call</a>
+        <a href={CALENDLY_URL} class="inline-block bg-secondary-500 hover:bg-secondary-600 text-primary-900 font-semibold py-3 px-6 rounded-lg transition-colors">Schedule a call</a>
       </div>
     </div>
     
