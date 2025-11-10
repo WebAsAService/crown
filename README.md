@@ -43,6 +43,11 @@ All commands are run from the root of the project, from a terminal:
 | `yarn astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `yarn astro -- --help` | Get help using the Astro CLI                     |
 
+## 🔗 Project Configuration
+
+- **Calendly link management**: Update the booking link in [`src/config/links.ts`](src/config/links.ts). The `CALENDLY_URL` constant is imported wherever the Calendly scheduler is referenced so changes propagate automatically.
+- **Vercel redirect**: Incoming traffic to `/book` is permanently redirected to the Calendly scheduler via [`vercel.json`](vercel.json). Adjust the destination there if the booking flow changes.
+
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

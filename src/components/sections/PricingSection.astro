@@ -3,6 +3,7 @@
 import { Image } from 'astro:assets';
 import checkGoldSvg from '../../assets/check-gold.svg';
 import checkBlueSvg from '../../assets/check-blue.svg';
+import { CALENDLY_URL } from '../../config/links';
 ---
 
 <section id="pricing" class="py-20 bg-primary-900">
@@ -165,7 +166,7 @@ import checkBlueSvg from '../../assets/check-blue.svg';
       <p class="text-center text-4xl text-secondary-500 mb-1 font-heading font-bold">Not sure which plan is right for you?</p>
       <p class="text-center text-xl text-white mb-3">We can scope an a la carte plan for you based on your current situation</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://calendly.com/mhachicha-crownacquisitiongroup" target="_blank" class="inline-block bg-secondary-500 hover:bg-secondary-600 text-primary-900 font-medium py-3 px-6 rounded-lg transition-colors shadow-md">
+        <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" class="inline-block bg-secondary-500 hover:bg-secondary-600 text-primary-900 font-medium py-3 px-6 rounded-lg transition-colors shadow-md">
           <div class="flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -173,7 +174,7 @@ import checkBlueSvg from '../../assets/check-blue.svg';
             <span>Get a Scope</span>
           </div>
         </a>
-        <a href="https://tally.so/r/3EGbZA" target="_blank" class="group inline-block bg-primary-800 hover:bg-secondary-500 text-white hover:text-primary-900 border-2 border-secondary-500 font-medium py-3 px-6 rounded-lg transition-colors shadow-md">
+        <a href="https://tally.so/r/3EGbZA" target="_blank" rel="noopener noreferrer" class="group inline-block bg-primary-800 hover:bg-secondary-500 text-white hover:text-primary-900 border-2 border-secondary-500 font-medium py-3 px-6 rounded-lg transition-colors shadow-md">
           <div class="flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-secondary-500 group-hover:text-primary-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />

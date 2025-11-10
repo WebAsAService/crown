@@ -1,6 +1,7 @@
 ---
 import MicroProofElement from "./MicroProofElement.astro";
 import PulseBeams from "../ui/PulseBeams.astro";
+import { CALENDLY_URL } from "../../config/links";
 ---
 
 <section class="relative bg-gradient-to-b from-primary-800 to-primary-900 text-white pt-20 pb-10">
@@ -38,7 +39,7 @@ import PulseBeams from "../ui/PulseBeams.astro";
           <!-- Pulse Beams Background Animation -->
           <PulseBeams
             showButton={true}
-            buttonLink="https://calendly.com/mhachicha-crownacquisitiongroup"
+            buttonLink={CALENDLY_URL}
             buttonText="Connect the dots"
             buttonClass="btn border border-secondary-400 hover:bg-secondary-500 hover:text-primary-900 text-secondary-300 px-8 py-3 rounded-md transition-all"
           />
