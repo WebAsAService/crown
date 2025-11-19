@@ -1,0 +1,107 @@
+---
+/**
+ * Clarity Check Landing Page
+ *
+ * This page demonstrates the reusable landing template pattern.
+ * To create a new landing page:
+ * 1. Duplicate this file
+ * 2. Update the pageConfig object with your content
+ * 3. Adjust the page route/filename as needed
+ * 4. That's it! The layout handles all rendering.
+ */
+
+import LandingLayout from "@layouts/LandingLayout.astro";
+
+const pageConfig = {
+  badge: "Financial clarity for scaling founders",
+  heroTitle: "See where your finance stack really stands",
+  heroSubtitle: "A short assessment that shows the gaps investors notice first",
+  heroBody: `Most founders grow faster than their finance systems do. The Clarity Check gives you a quick diagnostic of your financial hygiene, runway visibility, reporting cadence, and operational gaps.
+You answer ten questions.
+We map your score.
+You get a free clarity session with Mohamed Hachicha, CFO for venture backed companies in LA and the Bay Area.`,
+
+  primaryCta: {
+    label: "Take the Clarity Check",
+    href: "/clarity-check"
+  },
+
+  secondaryCta: {
+    label: "Book your free session",
+    href: "/clarity-call"
+  },
+
+  video: {
+    type: "external" as const,
+    src: "https://your-video-url.com/clarity",
+    poster: "/images/clarity-poster.png"
+  },
+
+  problemBlocks: [
+    {
+      title: "Your numbers look fine until you need to defend them",
+      body: "Investors expect clean data, a current forecast, and a clear picture of burn. Most teams can explain revenue and cash, but not the underlying trends. The Clarity Check helps you catch the weaknesses before a board meeting forces the issue."
+    },
+    {
+      title: "Growth outpaces your finance stack",
+      body: "Fast execution creates blind spots. Manual billing, scattered spreadsheets, late closes, or inconsistent KPIs pile up quietly. When the company hits a bigger milestone, those gaps are exposed all at once."
+    },
+    {
+      title: "Your first finance hire is doing too many jobs",
+      body: "Early companies often rely on one person to handle bookkeeping, reporting, payroll, forecasting, and investor support. That role becomes a bottleneck. The Clarity Check shows whether your internal coverage is strong enough to scale."
+    },
+    {
+      title: "Hiring decisions feel risky without clear runway",
+      body: "If you cannot see forward with precision, every new hire feels like a gamble. This assessment shows how much visibility you have today and what needs to tighten before you commit to new headcount."
+    }
+  ],
+
+  outcomeBlocks: [
+    {
+      title: "A clean view of where you stand",
+      body: "You get a mapped score across data hygiene, forecasting maturity, vendor spend, board reporting, HR coordination, and system integration. No jargon. Just signal."
+    },
+    {
+      title: "Your roadmap for the next ninety days",
+      body: "Based on your score, you receive a simple plan to stabilize your close process, strengthen reporting, and improve runway visibility."
+    },
+    {
+      title: "A free clarity session with a CFO",
+      body: "Every assessment includes a one to one session with Mohamed Hachicha. He has spent twenty years fixing finance systems, supporting raises, preparing companies for audits, and helping founders avoid premature CFO hires. You leave with direction, not theory."
+    },
+    {
+      title: "A view of what investors expect",
+      body: "You see how far you are from investor grade reporting and what actions will raise confidence before your next board meeting or fundraising cycle."
+    }
+  ],
+
+  faq: [
+    {
+      question: "Who is this assessment for?",
+      answer: "Founders from seed to series A with active operations, multi entity or multi product environments, and teams that want clear numbers, better runway visibility, and stronger reporting before hiring a full time finance leader."
+    },
+    {
+      question: "How long does the Clarity Check take?",
+      answer: "It takes two to three minutes. You answer ten questions and receive your mapped score immediately."
+    },
+    {
+      question: "What do I get after the assessment?",
+      answer: "You receive your diagnostic, a summary of gaps, and a link to book a free session with Mohamed. In that session, he walks through your result and gives you a ninety day action plan."
+    },
+    {
+      question: "Do I need to prepare anything?",
+      answer: "No. The questions are simple and based on your day to day operations. No files or spreadsheets needed."
+    },
+    {
+      question: "Is this a sales call?",
+      answer: "No. The clarity session is focused on your score, your current finance stack, and the steps that improve visibility, reporting, and hiring confidence. If there is a fit to work together, next steps are discussed at the end."
+    },
+    {
+      question: "Why is the session free?",
+      answer: "This is how we help founders understand their real financial picture. The assessment gives us your baseline. The session gives you clarity. It helps you decide whether you need internal hires, a sprint, or simple clean up."
+    }
+  ]
+};
+---
+
+<LandingLayout {...pageConfig} />
