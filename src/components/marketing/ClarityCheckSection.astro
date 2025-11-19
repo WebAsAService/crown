@@ -1,0 +1,85 @@
+---
+const CTA_URL =
+  "https://tally.so/r/3EGbZA?utm_source=website&utm_medium=clarity_check_section&utm_campaign=clarity_check_launch";
+---
+
+<section class="bg-primary-900 py-20">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col lg:flex-row items-center gap-16">
+      <div class="w-full lg:w-1/2 text-left">
+        <p class="text-sm uppercase tracking-[0.2em] text-secondary-400 mb-4">New</p>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-secondary-400 mb-6">
+          Take the Crown Clarity Check
+        </h2>
+        <p class="text-xl text-white mb-4">
+          See where your finance stack really stands, before investors ask.
+        </p>
+        <div class="space-y-4 text-lg text-white/90">
+          <p>
+            We built the Clarity Check to help founders cut through the noise. It’s a short
+            self-assessment that reveals how structured your financial operations actually are and
+            what to fix before you overspend or overhire.
+          </p>
+          <p>
+            In just a few minutes, you’ll uncover how your business measures up across bookkeeping,
+            forecasting, and operational clarity.
+          </p>
+          <p>
+            No spreadsheets. No jargon. Just a clear view of where you stand and what comes next.
+          </p>
+        </div>
+        <div class="mt-10">
+          <a
+            href={CTA_URL}
+            class="inline-flex items-center justify-center rounded-lg bg-secondary-400 px-8 py-4 text-lg font-semibold text-primary-900 shadow-lg transition-transform duration-200 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-secondary-200"
+            data-clarity-check-cta
+          >
+            Take the Clarity Check
+          </a>
+        </div>
+      </div>
+
+      <div class="w-full lg:w-1/2">
+        <div class="rounded-2xl border border-secondary-400/50 bg-primary-800/60 p-4 shadow-2xl">
+          <video
+            class="w-full rounded-xl border border-secondary-400/30"
+            controls
+            playsinline
+            preload="metadata"
+            poster="/images/clarity-check-poster.png"
+          >
+            <source
+              src="/videos/clarity-check.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <p class="mt-4 text-sm text-secondary-400">
+            Watch how it works → A quick walkthrough of the Clarity Check experience.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  import { trackEvent } from "../../utils/analytics";
+
+  const setupCTAAnalytics = () => {
+    const button = document.querySelector('[data-clarity-check-cta]');
+    if (!button) return;
+
+    button.addEventListener('click', () => {
+      trackEvent('cta_click', { section: 'clarity_check' });
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupCTAAnalytics, { once: true });
+  } else {
+    setupCTAAnalytics();
+  }
+</script>
