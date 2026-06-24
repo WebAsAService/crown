@@ -1,0 +1,221 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/layout/Header.astro";
+import Footer from "@components/layout/Footer.astro";
+import { CALENDLY_URL } from "../config/links";
+
+// Set Crown client theme - matches the landing page
+const clientTheme = "theme-crown-new";
+
+/*
+  TEAM ROSTER — confirmed on the Mohamed <> Edu call (Jun 23, 2026).
+  Five people: Mohamed Hachicha, Michael Loria, Peter Prucnel,
+  Adnane Charchour, Czarla Montilla.
+
+  Bios below are sourced from each person's LinkedIn (provided by Eduardo,
+  Jun 24 2026) and condensed into Crown's voice. Still pending:
+  - Headshots for all five — drop files in `public/images/team/` and set the
+    `image` field (e.g. "/images/team/mohamed.jpg").
+  - Adnane's LinkedIn URL (button hidden until added).
+  - Czarla's full name is tentative ("Zara" on the call) and she has no
+    LinkedIn — confirm spelling with Mohamed.
+*/
+const team = [
+  {
+    name: "Mohamed Hachicha",
+    role: "Founder & Strategic CFO",
+    pillar: "Finance",
+    bio:
+      "20+ years across Wall Street, fintech, SaaS, and healthcare — including roles at Morgan Stanley, VP of Finance posts in software, and Managing Director of an investment fund in Warsaw. Mohamed built Crown for the founder he kept meeting at the table: someone who built a real business but never had the finance function the big companies take for granted. BBA, George Washington University. Based in LA.",
+    linkedin: "https://www.linkedin.com/in/mohamed-hachicha-crown/",
+    image: "/images/team/mohamed.jpg",
+  },
+  {
+    name: "Michael Loria",
+    role: "Chief Information Security Officer",
+    pillar: "Technology",
+    bio:
+      "A seasoned CISO specializing in AWS and Azure cloud architecture, security, and compliance. Michael has led IT, DevOps, and Security teams, spearheaded a company's first HITRUST certification, built robust cybersecurity frameworks, and architected scalable SaaS platforms from inception to launch. At Crown he owns the technology and security node — keeping client systems integrated, automated, and protected.",
+    linkedin: "https://www.linkedin.com/in/michaelloria/",
+    image: "/images/team/michael.jpg",
+  },
+  {
+    name: "Peter Prucnel",
+    role: "Fractional People Operations Executive",
+    pillar: "People & HR",
+    bio:
+      "A process-driven Human Resources executive and M&A integration expert. Peter builds high-performance teams, leads organizational change, and becomes the trusted advisor at every level of a growing business. He owns Crown's people and HR node — onboarding, compliance, and the systems that keep teams engaged and performing as the company scales.",
+    linkedin: "https://www.linkedin.com/in/peterprucnel/",
+    image: "/images/team/peter.jpg",
+  },
+  {
+    name: "Adnane Charchour",
+    role: "Strategic Advisor & Board Member",
+    pillar: "Strategy & Advisory",
+    bio:
+      "An award-winning chief executive, board member, and private investor with 25+ years in executive leadership and entrepreneurship across SaaS, fintech, and cybersecurity. Adnane has raised $60M+ in capital, created $100M+ in shareholder value, and led high-growth companies onto the Deloitte Technology Fast 500 and the Inc. 5000 — scaling teams past 250 people. He advises Crown on corporate strategy, capital, and the high-stakes decisions founders face as they grow.",
+    linkedin: "https://www.linkedin.com/in/adnanecharchour/",
+    image: "/images/team/adnane.jpg",
+  },
+  {
+    name: "Czarla Montilla",
+    role: "Accounting & Delivery Lead",
+    pillar: "Operations & Delivery",
+    bio:
+      "Full-time and hands-on, Czarla keeps client delivery precise and dependable — bookkeeping, payroll coordination, and the day-to-day execution founders never have to think about.",
+    linkedin: "",
+    image: "",
+  },
+];
+---
+
+<Layout
+  title="Our Team — Crown Acquisition Group"
+  clientTheme={clientTheme}
+>
+  <Header
+    logo="/images/clients/crown/crown.png"
+    bgColor="bg-primary-800"
+    textColor="text-secondary-400"
+    hoverColor="text-secondary-700"
+    showFontsLink={false}
+  />
+
+  <main>
+    <!-- Intro / What we do -->
+    <section class="bg-gradient-to-b from-primary-800 to-primary-900 text-white pt-20 pb-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-secondary-400 mb-6">
+            The people behind your numbers.
+          </h1>
+          <p class="text-xl md:text-2xl text-white/90">
+            Crown is one firm connecting five functions — Finance, Operations,
+            HR, Legal, and Technology. Most fractional CFOs touch one. We touch
+            all five, and we connect them. Here's who does the work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Five pillars -->
+    <section class="bg-primary-900 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+            <div class="bg-primary-700 rounded-lg p-5">
+              <h3 class="text-secondary-400 font-bold mb-1">Finance</h3>
+              <p class="text-white/80 text-sm">CFO strategy, close, reporting</p>
+            </div>
+            <div class="bg-primary-700 rounded-lg p-5">
+              <h3 class="text-secondary-400 font-bold mb-1">Operations</h3>
+              <p class="text-white/80 text-sm">Systems, workflow, automation</p>
+            </div>
+            <div class="bg-primary-700 rounded-lg p-5">
+              <h3 class="text-secondary-400 font-bold mb-1">HR</h3>
+              <p class="text-white/80 text-sm">Payroll, onboarding, compliance</p>
+            </div>
+            <div class="bg-primary-700 rounded-lg p-5">
+              <h3 class="text-secondary-400 font-bold mb-1">Legal</h3>
+              <p class="text-white/80 text-sm">Risk, contracts, audit-ready</p>
+            </div>
+            <div class="bg-primary-700 rounded-lg p-5">
+              <h3 class="text-secondary-400 font-bold mb-1">Technology</h3>
+              <p class="text-white/80 text-sm">Stack, data, secure systems</p>
+            </div>
+          </div>
+          <p class="text-center text-white/70 mt-6 text-lg">
+            Five functions, connected. That's the difference — and that's the Crown.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team grid -->
+    <section id="team" class="py-16 bg-primary-900">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary-400 mb-4">
+              Meet the jewel in the Crown
+            </h2>
+            <p class="text-xl text-white/80 max-w-3xl mx-auto">
+              Real operators. Real outcomes. Finance, ops, and the back office working as one team.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-8">
+            {
+              team.map((member) => (
+                <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow flex flex-col w-full sm:w-80 max-w-sm">
+                  <div class="text-center flex-grow">
+                    <div class="w-32 h-32 mb-4 mx-auto">
+                      <div class="bg-gray-200 w-full h-full rounded-full flex items-center justify-center overflow-hidden">
+                        {member.image ? (
+                          <img
+                            src={member.image}
+                            alt={member.name}
+                            class="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-16 w-16 text-gray-400"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="1"
+                              d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1 text-primary-900">{member.name}</h3>
+                    <p class="text-secondary-600 font-medium mb-1">{member.role}</p>
+                    <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-3">{member.pillar}</p>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed text-left">
+                      {member.bio}
+                    </p>
+                  </div>
+                  {member.linkedin && (
+                    <div class="text-center mt-auto">
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center bg-primary-800 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-colors text-sm"
+                      >
+                        <svg class="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                        LinkedIn
+                      </a>
+                    </div>
+                  )}
+                </div>
+              ))
+            }
+          </div>
+
+          <div class="text-center mt-16">
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block bg-secondary-500 hover:bg-secondary-600 text-primary-900 font-semibold py-3 px-8 rounded-lg transition-colors"
+            >
+              Talk to the team
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
