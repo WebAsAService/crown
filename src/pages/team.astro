@@ -10,15 +10,13 @@ const clientTheme = "theme-crown-new";
 /*
   TEAM ROSTER — confirmed on the Mohamed <> Edu call (Jun 23, 2026).
   Five people: Mohamed Hachicha, Michael Loria, Peter Prucnel,
-  Adnane Charchour, Czarla Montilla.
+  Adnane Charchour, Czarla David.
 
-  Bios below are sourced from each person's LinkedIn (provided by Eduardo,
-  Jun 24 2026) and condensed into Crown's voice. Still pending:
-  - Headshots for all five — drop files in `public/images/team/` and set the
-    `image` field (e.g. "/images/team/mohamed.jpg").
-  - Adnane's LinkedIn URL (button hidden until added).
-  - Czarla's full name is tentative ("Zara" on the call) and she has no
-    LinkedIn — confirm spelling with Mohamed.
+  Bios sourced from each person's LinkedIn / self-provided copy (Jun 24 2026)
+  and condensed into Crown's voice. Photos in `public/images/team/` (256px,
+  sharp-resized). Only remaining gap: Czarla's headshot — once the file is at
+  `public/images/team/czarla.jpg`, set her `image` field to it.
+  Note: Czarla has no LinkedIn (no button rendered).
 */
 const team = [
   {
@@ -58,13 +56,13 @@ const team = [
     image: "/images/team/adnane.jpg",
   },
   {
-    name: "Czarla Montilla",
+    name: "Czarla David",
     role: "Accounting & Delivery Lead",
     pillar: "Operations & Delivery",
     bio:
-      "Full-time and hands-on, Czarla keeps client delivery precise and dependable — bookkeeping, payroll coordination, and the day-to-day execution founders never have to think about.",
+      "Crown's Accounting and Delivery Lead, Czarla partners with clients to strengthen their finance functions and run accounting operations that just work. She owns engagements end to end — onboarding, month-end close, reporting, and process improvement — so founders get accurate, timely numbers they can act on. With 10+ years across accounting, audit, and financial operations (from early-stage to established companies), she builds the scalable back-office processes that support real growth.",
     linkedin: "",
-    image: "",
+    image: "/images/team/czarla.jpg",
   },
 ];
 ---
