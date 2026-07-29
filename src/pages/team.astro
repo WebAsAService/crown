@@ -8,15 +8,15 @@ import { CALENDLY_URL } from "../config/links";
 const clientTheme = "theme-crown-new";
 
 /*
-  TEAM ROSTER — confirmed on the Mohamed <> Edu call (Jun 23, 2026).
-  Five people: Mohamed Hachicha, Michael Loria, Peter Prucnel,
-  Adnane Charchour, Czarla David.
+  TEAM ROSTER — updated per Mohamed's copy notes (Jul 29 2026).
+  Split into two groups: day-to-day operators (`team`) and the
+  `advisors` (board-level, not day-to-day). Adnane moved from `team`
+  into `advisors`; LaCour Miller added as a new board advisor.
 
-  Bios sourced from each person's LinkedIn / self-provided copy (Jun 24 2026)
-  and condensed into Crown's voice. Photos in `public/images/team/` (256px,
-  sharp-resized). Only remaining gap: Czarla's headshot — once the file is at
-  `public/images/team/czarla.jpg`, set her `image` field to it.
-  Note: Czarla has no LinkedIn (no button rendered).
+  Bios sourced from each person's LinkedIn / self-provided copy and
+  condensed into Crown's voice. Photos in `public/images/team/` (256px,
+  sharp-resized). Czarla has no LinkedIn profile, so no button renders
+  for her.
 */
 const team = [
   {
@@ -30,7 +30,7 @@ const team = [
   },
   {
     name: "Michael Loria",
-    role: "Chief Information Security Officer",
+    role: "Technology & Security Advisor",
     pillar: "Technology",
     bio:
       "A seasoned CISO specializing in AWS and Azure cloud architecture, security, and compliance. Michael has led IT, DevOps, and Security teams, spearheaded a company's first HITRUST certification, built robust cybersecurity frameworks, and architected scalable SaaS platforms from inception to launch. At Crown he owns the technology and security node — keeping client systems integrated, automated, and protected.",
@@ -39,13 +39,25 @@ const team = [
   },
   {
     name: "Peter Prucnel",
-    role: "HR & Compliance Officer",
+    role: "People, HR & Integration Advisor",
     pillar: "People & Integration Operations",
     bio:
       "A process-driven Human Resources executive and M&A integration expert. Peter builds high-performance teams, leads organizational change, and becomes the trusted advisor at every level of a growing business. He owns Crown's people and HR node — onboarding, compliance, and the systems that keep teams engaged and performing as the company scales.",
     linkedin: "https://www.linkedin.com/in/peterprucnel/",
     image: "/images/team/peter.jpg",
   },
+  {
+    name: "Czarla David",
+    role: "Accounting & Delivery Lead",
+    pillar: "Operations & Delivery",
+    bio:
+      "Crown's Accounting and Delivery Lead, Czarla partners with clients to strengthen their finance functions and run accounting operations that just work. She owns engagements end to end — onboarding, month-end close, reporting, and process improvement — so founders get accurate, timely numbers they can act on. With 10+ years across accounting, audit, and financial operations (from early-stage to established companies), she builds the scalable back-office processes that support real growth.",
+    linkedin: "",
+    image: "/images/team/czarla.jpg",
+  },
+];
+
+const advisors = [
   {
     name: "Adnane Charchour",
     role: "Strategic Advisor & Board Member",
@@ -56,13 +68,13 @@ const team = [
     image: "/images/team/adnane.jpg",
   },
   {
-    name: "Czarla David",
-    role: "Accounting & Delivery Lead",
-    pillar: "Operations & Delivery",
+    name: "LaCour Miller",
+    role: "Board Advisor, Specialty Finance",
+    pillar: "Risk & Specialty Finance",
     bio:
-      "Crown's Accounting and Delivery Lead, Czarla partners with clients to strengthen their finance functions and run accounting operations that just work. She owns engagements end to end — onboarding, month-end close, reporting, and process improvement — so founders get accurate, timely numbers they can act on. With 10+ years across accounting, audit, and financial operations (from early-stage to established companies), she builds the scalable back-office processes that support real growth.",
-    linkedin: "",
-    image: "/images/team/czarla.jpg",
+      "Managing Director of Specialty Finance at Always.Bank, LaCour has built his career on SMB risk management across fintech and traditional lending. His focus is accounts receivable financing and other forms of asset based lending, work that depends on reading risk correctly and building teams that can act on it. A graduate of Tulane University's A.B. Freeman School of Business, based in the Greater New Orleans region, he advises Crown on risk and specialty finance so founders get the same discipline applied to their own businesses.",
+    linkedin: "https://www.linkedin.com/in/lacour-miller-214a0721/",
+    image: "/images/team/lacour.jpg",
   },
 ];
 ---
@@ -88,9 +100,10 @@ const team = [
             The people behind your numbers.
           </h1>
           <p class="text-xl md:text-2xl text-white/90">
-            Crown is one firm connecting five functions — Finance, Operations,
-            HR, Legal, and Technology. Most fractional CFOs touch one. We touch
-            all five, and we connect them. Here's who does the work.
+            Crown brings together experienced operators across Finance,
+            Operations, HR, Legal, and Technology. Each leads a different
+            function, but they work as one team around your business. Here
+            are the people doing the work.
           </p>
         </div>
       </div>
@@ -123,7 +136,7 @@ const team = [
             </div>
           </div>
           <p class="text-center text-white/70 mt-6 text-lg">
-            Five functions, connected. That's the difference — and that's the Crown.
+            Five functions. One connected team.
           </p>
         </div>
       </div>
@@ -135,10 +148,10 @@ const team = [
         <div class="max-w-6xl mx-auto">
           <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary-400 mb-4">
-              Meet the jewel in the Crown
+              The people who connect the dots.
             </h2>
             <p class="text-xl text-white/80 max-w-3xl mx-auto">
-              Real operators. Real outcomes. Finance, ops, and the back office working as one team.
+              Experienced operators working across finance, operations, and the back office as one team.
             </p>
           </div>
 
@@ -209,6 +222,80 @@ const team = [
             >
               Talk to the team
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Board of Advisors -->
+    <section id="advisors" class="py-16 bg-primary-800 border-t border-primary-700">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary-400 mb-4">
+              Board of Advisors
+            </h2>
+            <p class="text-xl text-white/80 max-w-3xl mx-auto">
+              Senior voices Crown draws on for the decisions that matter most.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-8">
+            {
+              advisors.map((member) => (
+                <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow flex flex-col w-full sm:w-80 max-w-sm">
+                  <div class="text-center flex-grow">
+                    <div class="w-32 h-32 mb-4 mx-auto">
+                      <div class="bg-gray-200 w-full h-full rounded-full flex items-center justify-center overflow-hidden">
+                        {member.image ? (
+                          <img
+                            src={member.image}
+                            alt={member.name}
+                            class="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-16 w-16 text-gray-400"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="1"
+                              d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1 text-primary-900">{member.name}</h3>
+                    <p class="text-secondary-600 font-medium mb-1">{member.role}</p>
+                    <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-3">{member.pillar}</p>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed text-left">
+                      {member.bio}
+                    </p>
+                  </div>
+                  {member.linkedin && (
+                    <div class="text-center mt-auto">
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center bg-primary-800 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-colors text-sm"
+                      >
+                        <svg class="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                        LinkedIn
+                      </a>
+                    </div>
+                  )}
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
