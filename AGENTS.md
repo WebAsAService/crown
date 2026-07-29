@@ -6,7 +6,7 @@ This repo is the Crown Acquisition Group website revamp.
 
 - Active branch: `copy-revamp-and-team`
 - Remote: `origin/copy-revamp-and-team`
-- Latest relevant commit: `dfc5746 Polish team page mobile affordances`
+- Latest relevant commit: `8247c4b Center advisor card grid`
 
 ## Recent Work
 
@@ -25,8 +25,8 @@ This repo is the Crown Acquisition Group website revamp.
 - Production URL: `https://crown-ag-revamp-preview.netlify.app`
 - Project ID: `a3517f04-c6e6-4b56-ac3c-356d27d9f8cd`
 - Last direct production deploy: July 29, 2026, from local `dist`
-- Deploy URL: `https://6a6a697ab9f827a71ecca60e--crown-ag-revamp-preview.netlify.app`
-- Build logs: `https://app.netlify.com/projects/crown-ag-revamp-preview/deploys/6a6a697ab9f827a71ecca60e`
+- Deploy URL: `https://6a6a69eb6deb5b7c3cd828dc--crown-ag-revamp-preview.netlify.app`
+- Build logs: `https://app.netlify.com/projects/crown-ag-revamp-preview/deploys/6a6a69eb6deb5b7c3cd828dc`
 
 Use `npm run build` locally. Netlify's UI build command is currently `yarn run build`; on this machine, `yarn` was not available, so the direct production deploy used:
 
