@@ -333,9 +333,25 @@ const advisors = [
     };
 
     nextButton.addEventListener("click", () => {
-      const atEnd = carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 8;
+      const cards = Array.from(carousel.querySelectorAll(".team-card")).filter(
+        (card) => card instanceof HTMLElement,
+      );
+
+      if (!cards.length) {
+        return;
+      }
+
+      const currentIndex = cards.reduce((closestIndex, card, index) => {
+        const closestCard = cards[closestIndex];
+        const currentDistance = Math.abs(card.offsetLeft - carousel.scrollLeft);
+        const closestDistance = Math.abs(closestCard.offsetLeft - carousel.scrollLeft);
+
+        return currentDistance < closestDistance ? index : closestIndex;
+      }, 0);
+      const nextIndex = currentIndex >= cards.length - 1 ? 0 : currentIndex + 1;
+
       carousel.scrollTo({
-        left: atEnd ? 0 : carousel.scrollLeft + carousel.clientWidth * 0.86,
+        left: cards[nextIndex].offsetLeft,
         behavior: "smooth",
       });
     });
