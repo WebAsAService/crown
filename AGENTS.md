@@ -6,7 +6,7 @@ This repo is the Crown Acquisition Group website revamp.
 
 - Active branch: `copy-revamp-and-team`
 - Remote: `origin/copy-revamp-and-team`
-- Latest relevant implementation commit: `86f014d Apply final team page revisions`
+- Latest relevant implementation commit: `3ef8ad1 Polish team card copy and layout`
 
 ## Recent Work
 
@@ -14,6 +14,7 @@ This repo is the Crown Acquisition Group website revamp.
 - A standalone `/team` page was added and linked from the header/footer.
 - `/team` now separates day-to-day operators from the Advisory Board.
 - Final team-page revision notes were applied: the main headline is "The people who connect the dots.", the duplicate pre-card heading was removed, five functional boxes use the approved function copy, the CTA says "Talk with Crown", and the footer now uses Crown's broader audience framing.
+- Team card polish after review: operator bios are balanced to roughly the same length, the four-card desktop row uses the wider page container, Czarla's LinkedIn is included, the hero headline is kept to one line on desktop, and all team/advisor function tags use Title Case for consistency.
 - The operator section is 4-up on desktop.
 - On mobile, the team and advisor card rows use horizontal swipe/scroll snap carousels to avoid a long vertical stack of bios.
 - Mobile team/advisor carousels have visible right-arrow controls. The controls advance by real card position and loop from the last card back to the first card.
