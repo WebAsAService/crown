@@ -36,6 +36,7 @@ netlify deploy --prod --no-build --dir=dist --site=a3517f04-c6e6-4b56-ac3c-356d2
 
 ## Known Cleanup Candidates
 
+- Future blog/SEO/AEO work is parked in `BACKLOG.md`. Do not implement it until explicitly requested.
 - `package-lock.json` is untracked locally while the repo also has `yarn.lock`; decide which package manager is canonical before committing lockfile changes.
 - `/landing/clarity-check` still contains old ICP language such as investors, runway, seed, and Series A.
 - `/clients/crown` still uses the older Crown theme and embedded `TeamSection`; decide whether to retire it or align it with `/`.
