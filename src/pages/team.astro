@@ -15,44 +15,43 @@ const clientTheme = "theme-crown-new";
 
   Bios sourced from each person's LinkedIn / self-provided copy and
   condensed into Crown's voice. Photos in `public/images/team/` (256px,
-  sharp-resized). Czarla has no LinkedIn profile, so no button renders
-  for her.
+  sharp-resized).
 */
 const team = [
   {
     name: "Mohamed Hachicha",
     role: "Founder & Strategic CFO",
-    pillar: "FINANCE",
+    pillar: "Finance",
     bio:
-      "Mohamed is Crown's founder and strategic CFO, with more than 20 years of experience across finance, technology, healthcare, and investment management. After working inside both large institutions and growing companies, he built Crown to provide growing businesses with the financial leadership, operating discipline, and cross-functional support they need to scale. He leads client strategy and ensures the work stays connected to the decisions that drive performance, growth, and long-term value.",
+      "Mohamed is Crown's founder and strategic CFO, with more than 20 years across finance, technology, healthcare, and investment management. He built Crown to give growing businesses the financial leadership, operating discipline, and cross-functional support larger companies rely on. He leads client strategy and keeps finance connected to the decisions that drive performance, growth, and long-term value.",
     linkedin: "https://www.linkedin.com/in/mohamed-hachicha-crown/",
     image: "/images/team/mohamed.jpg",
   },
   {
     name: "Michael Loria",
     role: "Technology & Security Advisor",
-    pillar: "TECHNOLOGY & SECURITY",
+    pillar: "Technology & Security",
     bio:
-      "Michael is a seasoned technology and security leader specializing in cloud architecture, cybersecurity, DevOps, and compliance. He has led infrastructure and security teams, built scalable SaaS platforms, and guided companies through complex security initiatives. At Crown, he helps clients build secure, integrated systems that support growth without adding unnecessary complexity.",
+      "Michael is a technology and security leader specializing in cloud architecture, cybersecurity, DevOps, and compliance. He has led infrastructure and security teams, built scalable SaaS platforms, and guided complex security initiatives. At Crown, he helps clients design secure, integrated systems that support growth, protect data, and reduce operational friction as the business becomes more complex.",
     linkedin: "https://www.linkedin.com/in/michaelloria/",
     image: "/images/team/michael.jpg",
   },
   {
     name: "Peter Prucnel",
     role: "People & Integration Advisor",
-    pillar: "PEOPLE & INTEGRATION",
+    pillar: "People & Integration",
     bio:
-      "Peter is a people and integration leader with deep experience across human resources, M&A integration, organizational change, and executive advisory. He helps growing companies align teams, compensation, onboarding, compliance, and operating rhythms as the business becomes more complex. At Crown, he brings the people and integration perspective, making sure financial and operational decisions translate into stronger teams and cleaner execution.",
+      "Peter is a people and integration leader with deep experience across human resources, M&A integration, organizational change, and executive advisory. He helps companies align teams, compensation, onboarding, compliance, and operating rhythms as the business becomes more complex. At Crown, he brings the people perspective that turns financial and operational decisions into stronger teams and cleaner execution.",
     linkedin: "https://www.linkedin.com/in/peterprucnel/",
     image: "/images/team/peter.jpg",
   },
   {
     name: "Czarla David",
     role: "General Manager",
-    pillar: "Accounting & Delivery Lead",
+    pillar: "Accounting & Delivery",
     bio:
-      "Czarla is Crown's general manager and accounting delivery lead. She oversees client onboarding, month-end close, reporting, and process improvement, bringing more than 10 years of accounting, audit, and financial operations experience. At Crown, she keeps engagements moving from cleanup to ongoing delivery, making sure clients receive accurate numbers, consistent communication, and back-office processes they can rely on.",
-    linkedin: "",
+      "Czarla is Crown's general manager and accounting delivery lead, overseeing client onboarding, month-end close, reporting, and process improvement. She brings more than 10 years across accounting, audit, and financial operations. At Crown, she keeps engagements moving from cleanup to ongoing delivery, making sure clients receive accurate numbers, consistent communication, and back-office processes they can rely on.",
+    linkedin: "https://www.linkedin.com/in/czarla-marie-valencia-29aa862b2/",
     image: "/images/team/czarla.jpg",
   },
 ];
@@ -95,8 +94,8 @@ const advisors = [
     <!-- Intro / What we do -->
     <section class="bg-gradient-to-b from-primary-800 to-primary-900 text-white pt-20 pb-16">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-4xl md:text-5xl font-heading font-bold text-secondary-400 mb-6">
+        <div class="max-w-6xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl lg:whitespace-nowrap font-heading font-bold text-secondary-400 mb-6">
             The people who connect the dots.
           </h1>
           <p class="text-xl md:text-2xl text-white/90">
@@ -145,7 +144,7 @@ const advisors = [
     <!-- Team grid -->
     <section id="team" class="pt-8 pb-16 bg-primary-900">
       <div class="container mx-auto px-4">
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-7xl mx-auto">
           <div class="carousel-frame" data-carousel-frame>
             <div class="team-carousel lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0" data-carousel>
               {
