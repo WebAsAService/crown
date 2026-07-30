@@ -6,18 +6,19 @@ This repo is the Crown Acquisition Group website revamp.
 
 - Active branch: `copy-revamp-and-team`
 - Remote: `origin/copy-revamp-and-team`
-- Latest relevant commit: `ad5017b Loop team carousel controls`
+- Latest relevant implementation commit: `86f014d Apply final team page revisions`
 
 ## Recent Work
 
-- Homepage copy was repositioned away from early-stage/startup language toward Crown's current ICP: founder-led growing businesses, especially the $10M-$40M revenue range.
+- Homepage copy was repositioned away from early-stage/startup language toward Crown's current ICP: growing and established companies, executive teams, finance leaders, and business owners.
 - A standalone `/team` page was added and linked from the header/footer.
-- `/team` now separates day-to-day operators from the Board of Advisors.
+- `/team` now separates day-to-day operators from the Advisory Board.
+- Final team-page revision notes were applied: the main headline is "The people who connect the dots.", the duplicate pre-card heading was removed, five functional boxes use the approved function copy, the CTA says "Talk with Crown", and the footer now uses Crown's broader audience framing.
 - The operator section is 4-up on desktop.
 - On mobile, the team and advisor card rows use horizontal swipe/scroll snap carousels to avoid a long vertical stack of bios.
 - Mobile team/advisor carousels have visible right-arrow controls. The controls advance by real card position and loop from the last card back to the first card.
 - The five function cards use a centered flex wrap on mobile so the fifth item does not sit alone in a left-aligned grid cell. They return to a 5-up grid at tablet/desktop widths.
-- The two Board of Advisors cards are centered on desktop with fixed max-width cards inside the two-column grid.
+- The two Advisory Board cards are centered on desktop with fixed max-width cards inside the two-column grid.
 
 ## Deployment
 
@@ -38,6 +39,6 @@ netlify deploy --prod --no-build --dir=dist --site=a3517f04-c6e6-4b56-ac3c-356d2
 
 - Future blog/SEO/AEO work is parked in `BACKLOG.md`. Do not implement it until explicitly requested.
 - `package-lock.json` is untracked locally while the repo also has `yarn.lock`; decide which package manager is canonical before committing lockfile changes.
-- `/landing/clarity-check` still contains old ICP language such as investors, runway, seed, and Series A.
+- `/landing/clarity-check` still contains old investor and early-stage positioning.
 - `/clients/crown` still uses the older Crown theme and embedded `TeamSection`; decide whether to retire it or align it with `/`.
 - Build warnings remain for unsupported image files under `src/pages/clients/crown/assets`, a missing `/images/clients/crown/grid-pattern.svg`, stale Browserslist data, and PostCSS `@import` ordering.
