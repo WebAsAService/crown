@@ -26,9 +26,9 @@ This repo is the Crown Acquisition Group website revamp.
 - Netlify project: `crown-ag-revamp-preview`
 - Production URL: `https://crown-ag-revamp-preview.netlify.app`
 - Project ID: `a3517f04-c6e6-4b56-ac3c-356d27d9f8cd`
-- Last direct production deploy: July 29, 2026, from local `dist`
-- Deploy URL: `https://6a6a6a679fb538a62d8f9753--crown-ag-revamp-preview.netlify.app`
-- Build logs: `https://app.netlify.com/projects/crown-ag-revamp-preview/deploys/6a6a6a679fb538a62d8f9753`
+- Last direct production deploy: July 30, 2026, from local `dist`
+- Deploy URL: `https://6a6b869eacde713493bd3ab5--crown-ag-revamp-preview.netlify.app`
+- Build logs: `https://app.netlify.com/projects/crown-ag-revamp-preview/deploys/6a6b869eacde713493bd3ab5`
 
 Use `npm run build` locally. Netlify's UI build command is currently `yarn run build`; on this machine, `yarn` was not available, so the direct production deploy used:
 
