@@ -1,0 +1,15 @@
+# Crown Acquisition Group
+
+> Financial Clarity for Growing Startups — Crown Acquisition Group helps early-stage startups optimize their financial operations with C-level support.
+
+Crown Acquisition Group is led by Mohamed Hachicha, a CFO for venture-backed companies in LA and the Bay Area. They work with founders whose growth has outpaced their finance systems.
+
+## Pages
+
+- [Home](https://crownag.com/): Overview of Crown Acquisition Group's fractional CFO services for growing startups.
+- [Clarity Check](https://crownag.com/landing/clarity-check): A free 10-question diagnostic of a startup's financial hygiene, runway visibility, reporting cadence, and operational gaps, followed by a free clarity session with Mohamed Hachicha.
+
+## Notes
+
+- Full sitemap: https://crownag.com/sitemap-index.xml
+- Book time: https://crownag.com/book

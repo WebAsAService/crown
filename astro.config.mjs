@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 import path from 'path';
 
 // Security headers configuration
@@ -39,9 +40,20 @@ const securityMiddleware = (req, res, next) => {
 // https://astro.build/config
 export default defineConfig({
   // Enable Tailwind CSS integration
-  integrations: [tailwind()],
+  integrations: [
+    tailwind(),
+    sitemap({
+      // Excludes the orphaned /clients/crown duplicate (near-identical to
+      // the real homepage — would read as duplicate content) and internal
+      // theme dev/demo pages, none of which are real public pages.
+      filter: (page) =>
+        !page.includes('/clients/') &&
+        !page.includes('/theme-demo') &&
+        !page.includes('/theme-test')
+    })
+  ],
   // Configure site metadata
-  site: 'https://your-site-domain.com',
+  site: 'https://crownag.com',
   // Static site generation (default)
   output: 'static',
   // Configure build output
