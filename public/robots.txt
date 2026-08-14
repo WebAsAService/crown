@@ -1,0 +1,55 @@
+User-agent: *
+Allow: /
+Disallow: /clients/
+Disallow: /theme-demo
+Disallow: /theme-test
+
+User-agent: GPTBot
+Allow: /
+Disallow: /clients/
+Disallow: /theme-demo
+Disallow: /theme-test
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /clients/
+Disallow: /theme-demo
+Disallow: /theme-test
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /clients/
+Disallow: /theme-demo
+Disallow: /theme-test
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /clients/
+Disallow: /theme-demo
+Disallow: /theme-test
+
+User-agent: Claude-User
+Allow: /
+Disallow: /clients/
+Disallow: /theme-demo
+Disallow: /theme-test
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /clients/
+Disallow: /theme-demo
+Disallow: /theme-test
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /clients/
+Disallow: /theme-demo
+Disallow: /theme-test
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /clients/
+Disallow: /theme-demo
+Disallow: /theme-test
+
+Sitemap: https://crownag.com/sitemap-index.xml
